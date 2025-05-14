@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antartican Co. - Stall POS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="pos-container">
+        <header class="pos-header">
+            <div class="logo-container">
+                <img src="logo.png" alt="Antartican Co. Logo" class="logo-img">
+            </div>
+            <nav>
+                <button class="nav-button active">ORDER ENTRY</button>
+                <a href="history.html" class="nav-button">HISTORY</a>
+            </nav>
+            <div class="user-info">Stall Operator</div>
+        </header>
+
+        <main class="main-content">
+            <section class="current-order-panel">
+                <h2>Current Order (#<span id="order-number">1</span>)</h2>
+                <div class="order-items-list-container">
+                    <ul id="order-items-list">
+                        <!-- Items will be added here by JavaScript -->
+                        <li class="no-items">No items in order.</li>
+                    </ul>
+                </div>
+                <div class="order-summary">
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal-price">₹0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax (0%):</span>
+                        <span id="tax-amount">₹0.00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="total-price">₹0.00</span>
+                    </div>
+                </div>
+                <div class="order-actions">
+                    <button id="clear-order-btn" class="action-btn clear-btn">Clear Order</button>
+                    <button id="send-order-btn" class="action-btn send-btn">Send Order</button>
+                </div>
+            </section>
+
+            <section class="menu-panel">
+                <h2>Menu Items</h2>
+                <div class="menu-categories">
+                    <!-- Category buttons can be added here if needed later -->
+                </div>
+                <div id="menu-items-grid" class="menu-items-grid">
+                    <!-- Menu items will be added here by JavaScript -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

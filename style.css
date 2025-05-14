@@ -1,0 +1,546 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e0e0e0; /* Light grey background */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.pos-container {
+    width: 95%;
+    max-width: 1200px;
+    height: 85vh;
+    min-height: 650px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Header */
+.pos-header {
+    background-color: #2c3e50; /* Dark blue-grey */
+    color: white;
+    padding: 10px 25px; /* Adjusted padding for logo */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #e74c3c; /* Red accent */
+}
+
+.logo-container {
+    /* Add any specific container styles if needed */
+}
+
+.logo-img {
+    height: 40px; /* Adjust height as needed for your logo */
+    width: auto;  /* Maintain aspect ratio */
+    display: block; /* Removes extra space if image is inline */
+}
+
+.pos-header nav .nav-button {
+    background-color: #34495e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.pos-header nav .nav-button.active,
+.pos-header nav .nav-button:hover {
+    background-color: #e74c3c;
+}
+
+.user-info {
+    font-size: 0.9em;
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+/* Left Panel: Current Order */
+.current-order-panel {
+    width: 35%;
+    min-width: 320px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #dee2e6;
+}
+
+.current-order-panel h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-size: 1.5em;
+    border-bottom: 2px solid #e74c3c;
+    padding-bottom: 5px;
+}
+
+.order-items-list-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+#order-items-list {
+    list-style: none;
+}
+
+#order-items-list li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#order-items-list li:last-child {
+    border-bottom: none;
+}
+
+#order-items-list li.no-items {
+    color: #888;
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+}
+
+.item-details {
+    flex-grow: 1;
+    padding-right: 10px;
+}
+.item-name {
+    font-weight: bold;
+    display: block;
+}
+.item-price-each {
+    font-size: 0.8em;
+    color: #555;
+}
+
+.item-controls {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.item-controls button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+}
+.item-controls button.remove-item-btn {
+    background-color: #dc3545;
+}
+.item-controls .item-quantity {
+    min-width: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.item-total-price {
+    min-width: 70px;
+    text-align: right;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.order-summary {
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px dashed #ccc;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    font-size: 0.95em;
+}
+.summary-row.total {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #e74c3c;
+    margin-top: 5px;
+}
+.summary-row.total span {
+    color: #e74c3c;
+}
+
+.order-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.action-btn { /* General class for buttons like Clear/Send Order */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    flex-grow: 1;
+}
+.action-btn:hover {
+    opacity: 0.85;
+}
+
+.clear-btn {
+    background-color: #6c757d;
+    color: white;
+    margin-right: 10px;
+}
+
+.send-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+/* Right Panel: Menu */
+.menu-panel {
+    width: 65%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.menu-panel h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-size: 1.5em;
+    border-bottom: 2px solid #e74c3c;
+    padding-bottom: 5px;
+}
+
+.menu-categories {
+    margin-bottom: 15px;
+    display: none; /* Category buttons hidden for now */
+}
+
+.menu-items-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 15px;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 10px; /* Space for scrollbar */
+}
+
+.menu-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.menu-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.menu-item-image {
+    width: 80px;
+    height: 80px;
+    background-color: #eee;
+    margin: 0 auto 10px auto;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    color: #aaa;
+}
+
+.menu-item-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 0.95em;
+    min-height: 2.5em; /* Ensure consistent height for names */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-item-price {
+    color: #e74c3c;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.add-to-order-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s;
+    margin-top: auto; /* Push button to bottom if item content varies */
+}
+
+.add-to-order-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Scrollbar styling (optional, webkit browsers) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+/* History Page Specific Styles */
+.history-container .main-content {
+    flex-direction: column;
+}
+
+.order-history-panel {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.order-history-panel h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-size: 1.5em;
+    border-bottom: 2px solid #e74c3c;
+    padding-bottom: 5px;
+}
+
+.history-actions { /* Container for "Clear All History" button */
+    margin-bottom: 20px;
+    text-align: right;
+}
+.history-actions .action-btn.clear-btn { /* Specific style for clear history button */
+    background-color: #dc3545;
+    color: white;
+    flex-grow: 0;
+    margin-right: 0;
+}
+
+.order-history-list {
+    flex-grow: 1;
+}
+
+.order-history-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-left: 5px solid transparent; /* Default left border for status */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: border-left 0.3s, background-color 0.3s, opacity 0.3s;
+}
+
+.order-history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px; /* Reduced margin */
+}
+
+.order-history-header h3 {
+    color: #0056b3; /* Blue for order number */
+    font-size: 1.3em;
+    margin: 0;
+    display: flex; /* To align badge next to h3 */
+    align-items: center;
+}
+
+.status-badge {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 12px; /* Pill shape */
+    margin-left: 10px;
+    text-transform: uppercase;
+}
+.status-badge.status-pending { background-color: #ffc107; color: #333;} /* Yellow */
+.status-badge.status-preparing { background-color: #17a2b8; } /* Teal */
+.status-badge.status-ready { background-color: #28a745; }    /* Green */
+.status-badge.status-served { background-color: #6c757d; }    /* Grey / Completed */
+.status-badge.status-cancelled { background-color: #dc3545; } /* Red */
+
+
+.order-card-meta {
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+.order-card-meta .order-total-display strong {
+    color: #333;
+}
+
+.order-history-body h4 { /* "Items:" heading */
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1em;
+    color: #444;
+}
+
+.history-items-list {
+    list-style: disc; /* Use disc for items list */
+    padding-left: 20px; /* Indent list items */
+    margin-bottom: 15px;
+}
+
+.history-items-list li {
+    font-size: 0.9em;
+    color: #555;
+    padding: 3px 0;
+}
+
+.order-history-controls {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #ccc;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    gap: 10px; /* Space between control groups */
+    align-items: center;
+}
+
+.progress-action, .payment-action {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between label and control */
+}
+.payment-action label {
+    font-weight: bold;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.status-dropdown { /* For Payment Status */
+    padding: 7px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 0.9em;
+}
+
+.progress-btn, .delete-order-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.progress-btn.progress-mark-preparing { background-color: #17a2b8; } /* Teal */
+.progress-btn.progress-mark-ready    { background-color: #28a745; } /* Green */
+.progress-btn.progress-mark-completed-paid { background-color: #007bff; } /* Blue */
+
+.delete-order-btn {
+    background-color: #dc3545; /* Red */
+    margin-left: auto; /* Push delete button to the right */
+}
+.progress-btn:hover, .delete-order-btn:hover {
+    opacity: 0.85;
+}
+
+
+.no-history {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    padding: 30px;
+    font-size: 1.1em;
+}
+
+.history-main-content {
+    overflow-y: auto;
+}
+
+/* Data attribute styling for payment status (background of card) */
+.order-history-card[data-payment-status="Unpaid"] {
+   background-color: rgb(255,0,0); /* Red background for Unpaid orders */
+}
+.order-history-card[data-payment-status="Paid (Cash)"],
+.order-history-card[data-payment-status="Paid (Online)"] {
+    background-color: #e6ffed; /* Very light green background */
+}
+.order-history-card[data-payment-status="Refunded"] {
+    background-color: #f8f9fa; /* Light grey */
+    opacity: 0.8;
+}
+.order-history-card[data-payment-status="Cancelled"] {
+    opacity: 0.7; /* Also apply opacity if payment is cancelled */
+}
+
+/* Data attribute styling for preparation status (left border of card) - overrides previous if both set */
+.order-history-card[data-preparation-status="Pending"] { border-left-color: #ffc107; } /* Yellow */
+.order-history-card[data-preparation-status="Preparing"] { border-left-color: #17a2b8; } /* Teal */
+.order-history-card[data-preparation-status="Ready"] { border-left-color: #28a745; }    /* Green */
+.order-history-card[data-preparation-status="Served"] { border-left-color: #6c757d; }    /* Grey / Completed */
+.order-history-card[data-preparation-status="Cancelled"] {
+    border-left-color: #dc3545; /* Red */
+    opacity: 0.7;
+}

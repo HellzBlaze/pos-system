@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History - Antartican Co.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="pos-container history-container">
+        <header class="pos-header">
+            <div class="logo-container">
+                <img src="logo.png" alt="Antartican Co. Logo" class="logo-img">
+            </div>
+            <nav>
+                <a href="index.html" class="nav-button">ORDER ENTRY</a>
+                <button class="nav-button active">HISTORY</button>
+            </nav>
+            <div class="user-info">Stall Operator</div>
+        </header>
+
+        <main class="main-content history-main-content">
+            <section class="order-history-panel">
+                <h2>Order History</h2>
+                <div class="history-actions">
+                    <button id="clear-history-btn" class="action-btn clear-btn">Clear All History</button>
+                </div>
+                <div id="order-history-list" class="order-history-list">
+                    <p class="no-history">No past orders found.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="history.js"></script>
+</body>
+</html>
